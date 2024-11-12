@@ -1,9 +1,10 @@
 import express from 'express';
-import { connectDB } from './config/dbConfig.mjs';
-import superHeroRoutes from './routes/superHeroRoutes.mjs';
+import { connectDB } from './src/config/dbConfig.mjs';
+import superHeroRoutes from './src/routes/superHeroRoutes.mjs';
+import router from './src/routes/superHeroRoutes.mjs';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3500;
 
 //Middleware para parsear JSON
 app.use(express.json());
@@ -12,7 +13,7 @@ app.use(express.json());
 connectDB();
 
 //Configuración de rutas
-app.use('/api', superHeroRoutes);
+app.use('/api', router);
 
 //Manejo de errores para rutas no encontradas
 app.use((req, res) => {
