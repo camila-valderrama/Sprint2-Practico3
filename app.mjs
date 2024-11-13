@@ -1,6 +1,5 @@
 import express from 'express';
 import { connectDB } from './src/config/dbConfig.mjs';
-import superHeroRoutes from './src/routes/superHeroRoutes.mjs';
 import router from './src/routes/superHeroRoutes.mjs';
 
 const app = express();
